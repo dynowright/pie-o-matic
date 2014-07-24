@@ -1,0 +1,128 @@
+/* piestyle4a.css */
+
+#main {
+	background-color: #A2e5e8;
+	border: solid #2AB2AB;
+	border-width: 0.5%;
+	max-width: 320px;
+	height: 480px;
+	z-index: 0;
+	margin: 0 auto;
+	padding: 2% 0 2% 0;
+	border-radius: 2%;
+}
+
+#top {
+	background-color: #DEFFFA;
+	border: solid #FFD653;
+	max-width: 90%;
+	height: 5%;
+	padding: 1%;
+	margin: 0 auto;
+	margin-bottom: 2%;
+}
+
+#nameplate {
+	float: left;
+	font-family: 'Acme', serif;
+	color: #FF904A;
+	font-size: 1.25em;
+	text-align: left;
+}
+
+#powerswitch {
+	max-width: 35%;
+	background-color: gray;
+	margin: 0 auto;
+	padding: 2%;
+	text-align: center;
+	border: solid white 1px;
+	border-radius: 12%;
+	color: white;
+	font-family: "Michroma";
+	font-size: 0.5em;
+	float: right;
+}
+
+#status {
+	background-color: #FEFFE2;
+	border: solid #FFD653;
+	max-width: 90%;
+	height: 5%;
+	padding: 1%;
+	margin: 0 auto;
+	margin-bottom: 2%;
+}
+
+#options {
+	background-color: #DEFFFA;
+	border: solid #FFD653;
+	border-width: 1%;
+	max-width: 90%;
+	height: 50%;
+	padding: 1%;
+	margin: 0 auto;
+	margin-bottom: 2%;
+
+}
+
+#pie {
+
+}
+
+#shell {
+
+}
+
+#filling {
+
+}
+
+#formshell, #formfilling {
+
+}
+
+#oven {
+	background-color: #DEFFFA;
+	border: solid #FFD653;
+	border-width: 1%;
+	max-width: 90%;
+	height: 26%;
+	padding: 1%;
+	margin: 0 auto;
+	margin-bottom: 2%;
+
+}
+
+.selecttext {
+	text-align: center;
+	font-family: 'Michroma', sans-serif;
+	color: #FF904A;
+	font-size: 0.5em;
+}
+
+#slider {
+	margin-top: 2%;
+	font-family: "Michroma", sans-serif;
+	color: #FF904A;
+}
+
+#temp, #time {
+	margin: 0 auto;
+	text-align: center;
+	max-width: 80%;
+}
+
+.tempslider {
+	border: 0;
+	color: #FF904A;
+	font-family: "Michroma", sans-serif;
+	font-size: xx-small;
+
+}
+
+.group:after {
+  	content:"";
+ 	display:table;
+ 	clear:both;
+}
