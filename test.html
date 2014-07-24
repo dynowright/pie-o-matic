@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+  	<title>Hello and welcome to Pie-O-Matic</title>
+  	<link rel="stylesheet" href="piestyle4a.css" type="text/css">
+  	<link rel="stylesheet" href="jquery-ui.css" type="text/css">
+  	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  	<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+  	<link href='http://fonts.googleapis.com/css?family=Acme' rel='stylesheet' type='text/css'>
+  	<link href='http://fonts.googleapis.com/css?family=Michroma' rel='stylesheet' type='text/css'>
+  	<script>
+	  $(function() {
+    	$( "#formfilling" ).buttonset();
+  		});
+  	</script>
+  	<script>
+  	  $(function() {
+  		$( "#formshell" ).buttonset();
+  		});
+	</script>
+	<script>
+  	 $(function() {
+    $( "#slider-range-min" ).slider({
+      range: "min",
+      value: 250,
+      min: 170,
+      max: 500,
+      slide: function( event, ui ) {
+        $( "#slider" ).val( ui.value );
+        $(this).find('.ui-slider-handle').text(ui.value);
+      },
+      create: function(event, ui) {
+            var v=$(this).slider('value');
+            $(this).find('.ui-slider-handle').text(v);
+        	}
+    });
+    $( "#slider" ).val( $( "#slider-range-min" ).slider( "value" ) );
+  });
+  </script> 
+  <script>
+  	$(function(){
+  	  $("#slider-range-max").slider({
+        range: "max",
+        min: 0,
+        max: 60,
+        value: 30,
+        slide: function( event, ui ) {
+            $( "#amount" ).val( ui.value );
+            $(this).find('.ui-slider-handle').text(ui.value);
+        },
+        create: function(event, ui) {
+            var v=$(this).slider('value');
+            $(this).find('.ui-slider-handle').text(v);
+        	}
+    	});    
+	});
+  </script> 
+</head>
+<body>
+	<div id="main">
+
+		<div id="top" class="group">
+			<div id="nameplate">
+				Pie-O-Matic
+			</div><!--end nameplate-->
+			<div id="powerswitch">
+				POWER
+			</div><!--end powerswitch-->
+		</div><!--end top-->
+
+		<div id="status">
+		</div><!--end status-->
+
+		<div id="options">
+			
+			<div id="pie">
+				<div id="shell" class="group">
+
+					<p class="selecttext">Select shell:</p>
+			
+					<div id="formshell">
+						<input type="radio" id="radio1" name="radioS"><label for="radio1">Flaky</label>
+          				<input type="radio" id="radio2" name="radioS"><label for="radio2">Tender</label>
+					</div><!--end formshell-->
+
+				</div><!--end shell-->
+
+				<div id="filling" class="group">
+					<p class="selecttext">Select filling:</p>
+			
+					<div id="formfilling">
+						<input type="radio" id="radio3" name="radioF"><label for="radio3">Apple</label>
+          				<input type="radio" id="radio4" name="radioF"><label for="radio4">Cherry</label>
+          				<input type="radio" id="radio5" name="radioF"><label for="radio5">Pumpkin</label> 
+	          			<input type="radio" id="radio6" name="radioF"><label for="radio6">Coconut</label>
+					</div><!--end formfilling-->
+
+				</div><!--end filling-->
+
+			</div><!--end pie-->
+
+			<div id="temp">
+				<p>
+				<label class="tempslider" for="slider">Select temperature:</label>
+				
+				</p>
+				<div id="slider-range-min"></div>
+			</div><!--end temp-->
+
+			<div id="time"> 
+				<p class="tempslider" for="slider">Select time:</label>
+				<div id="slider-range-max"></div>
+			
+			</div>
+
+		</div><!--end options-->
+
+		<div id="oven">
+		</div><!--end oven-->
+	</div><!--end main-->
+</body>
+</html>
+
+
+</body>
+</html>
