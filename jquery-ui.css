@@ -210,8 +210,8 @@
 	font-family: "Michroma", sans-serif;
 	display: block;
 	margin: 0 auto;
-	/*position: relative;
-	right: 20px; */
+	/* position: relative;
+	left: 15px; */
 	padding: 0;
 	line-height: normal;
 	margin-right: .1em; 
@@ -307,6 +307,7 @@ input.ui-button {
 .ui-buttonset {
 	/* margin-right: 7px; */ 
 	 margin: 0 auto;
+	 
 	/* float: left; */
 
 }
