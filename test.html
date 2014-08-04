@@ -2,34 +2,38 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<title>Pie-O-Matic</title>
   	<link rel="stylesheet" href="piestyle4a.css" type="text/css">
   	<link rel="stylesheet" href="jquery-ui.css" type="text/css">
   	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
   	<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
-    <script src="jquery.ui.touch-punch.min.js"></script>
-    <script src="piescript4a.js"></script>
+        <script src="jquery.ui.touch-punch.min.js"></script>
+        <script src="piescript4a.js"></script>
   	<link href='http://fonts.googleapis.com/css?family=Acme' rel='stylesheet' type='text/css'>
-  	<link href='http://fonts.googleapis.com/css?family=Michroma' rel='stylesheet' type='text/css'>
+  	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  	<link href='http://fonts.googleapis.com/css?family=Cherry+Cream+Soda' rel='stylesheet' type='text/css'>
   	
 </head>
 <body>
 
-  <div id="left_shell_panel">
-  </div>
-	<div id="main">
+  <div id="left_shell_panel"> 
+  
+  </div><!-- end left_shell_panel -->
+  	<div id="main">
 
 		<div id="top" class="group">
 			<div id="nameplate">
-				Pie-O-Matic
+				PIE-O-MATIC
 			</div><!--end nameplate-->
 			<div>
-				<button id="powerswitch">POWER</button>
+				<button id="powerswitchoff">OFF</button>
+				<button id="powerswitch">ON</button>
 			</div><!--end powerswitch-->
 		</div><!--end top-->
 
 		<div id="status">
-      <p class="statustext">Hello and welcome! Let's make a pie.</p>
+      		<p class="statustext">Let's make a pie! Press the ON button.</p>
 		</div><!--end status-->
 
 		<div id="options">
@@ -37,23 +41,23 @@
 			<div id="pie">
 				<div id="shell" class="group">
 
-					<p class="selecttext">Select shell:</p>
+					<p class="selecttext">SELECT SHELL</p>
 			
 					<div id="formshell">
-						<input type="radio" id="radio1" name="radioS" value="flaky"><label for="radio1">Flaky</label>
-          	<input type="radio" id="radio2" name="radioS" value="tender"><label for="radio2">Tender</label>
+						<input type="radio" id="radio1" class="opt" name="radioS" value="flaky"><label for="radio1">FLAKY</label>
+          				<input type="radio" id="radio2" class="opt" name="radioS" value="tender"><label for="radio2">TENDER</label>
 					</div><!--end formshell-->
 
 				</div><!--end shell-->
 
 				<div id="filling" class="group">
-					<p class="selecttext">Select filling:</p>
+					<p class="selecttext">SELECT FILLING</p>
 			
 					<div id="formfilling">
-						<input type="radio" id="radio3" name="radioF" value="apple"><label for="radio3">Apple</label>
-          	<input type="radio" id="radio4" name="radioF" value="cherry"><label for="radio4">Cherry</label>
-          	<input type="radio" id="radio5" name="radioF" value="pumpkin"><label for="radio5">Pumpkin</label> 
-	          <input type="radio" id="radio6" name="radioF" value="blueberry"><label for="radio6">Blueberry</label>
+						<input type="radio" id="radio3" class="opt" name="radioF" value="apple"><label for="radio3">APPLE</label>
+          				<input type="radio" id="radio4" class="opt" name="radioF" value="cherry"><label for="radio4">CHERRY</label>
+          				<input type="radio" id="radio5" class="opt" name="radioF" value="pumpkin"><label for="radio5">PUMPKIN</label> 
+	          			<!-- <input type="radio" id="radio6" name="radioF" value="blueberry"><label for="radio6">BLUEBERRY</label> -->
 					</div><!--end formfilling-->
 
 				</div><!--end filling-->
@@ -62,35 +66,31 @@
 
 			<div id="temp">
 				<p>
-				<label class="tempslider" for="slider">Select temperature:</label>
+				<label class="tempslider" for="slider">SELECT TEMPERATURE</label>
 				</p>
 				<div id="slider-range-min"></div>
 			</div><!--end temp-->
 
 			<div id="time"> 
-				<p class="tempslider" for="slider">Select time:</label>
+				<p class="tempslider" for="slider">SELECT TIME</label>
 				</p>
-        <div id="slider-range-max"></div>
-			</div>
+       		 <div id="slider-range-max"></div>
+			</div><!-- end time -->
 
-      <div id="formbake">
-        <input type="radio" id="radio7" name="radioB" value="start"><label for="radio7">BAKE</label>
-        <input type="radio" id="radio8" name="radioB" value="reset"><label for="radio8">RESET</label>
-       <!-- <input type="radio" id="radio9" name="radioB" value="random"><label for="radio9">RANDOM</label> -->
-      </div>
+     		<div id="formbake">
+        		<input type="radio" id="radio7" class="opt" name="radioB" value="start"><label for="radio7">BAKE</label>
+        		<input type="radio" id="radio8" class="opt" name="radioB" value="reset"><label for="radio8">RESET</label>
+       	   <!-- <input type="radio" id="radio9" name="radioB" value="random"><label for="radio9">RANDOM</label> -->
+      		</div><!-- end formbake -->
 
 		</div><!--end options-->
 
 		<div id="oven">
-      <img id="ovenopening" src="ovenpie_none.png" alt="oven">
+      		<img id="ovenopening" src="ovenpie_none.png" alt="oven">
 		</div><!--end oven-->
 
 
 	</div><!--end main-->
-
-  <!-- <div id="right_fill_panel">
-  </div>  -->
-
 
 </body>
 </html>
