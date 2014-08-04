@@ -1,4 +1,3 @@
-
     $(function() {
       $( "#formfilling" ).buttonset();
       });
@@ -35,7 +34,7 @@
         range: "max",
         min: 0,
         max: 60,
-        value: 30,
+        value: 15,
         slide: function( event, ui ) {
             $( "#amount" ).val( ui.value );
             $(this).find('.ui-slider-handle').text(ui.value);
@@ -60,6 +59,8 @@ function init() {
 	bake.addEventListener("click", bakePie);
   var reset = document.getElementById("radio8");
   reset.addEventListener("click", resetPie);
+  var off = document.getElementById("powerswitchoff");
+  off.addEventListener("click", turnOff);
  
   $ ( "#slider-range-min" ).slider( "disable" );
   $ ( "#slider-range-max" ).slider( "disable" );
@@ -71,16 +72,17 @@ function init() {
   $ ( "#radio6" ).button( "disable" );
   $ ( "#radio7" ).button( "disable" );
   $ ( "#radio8" ).button( "disable" );
-//  $ ( "#radio9" ).button( "disable" ); 
+
 };
 
 function showPowerOn() {
 	var powerOn = document.getElementById("powerswitch");
-	powerOn.style.color = '#00FF00';
-  powerOn.style.backgroundColor = '#FFFFFF';
+	powerOn.style.color = '#FFFFFF';
+  powerOn.style.backgroundColor = '#00FF00';
   powerOn.style.borderColor = '#d3d3d3';
-	document.getElementById("status").innerHTML = "<p>The oven is on. Next, pick a shell.</p>";
+	document.getElementById("status").innerHTML = "<p>The oven is on. Next, select a shell.</p>";
 	console.log("Oven is now on.");
+  
 	$ ( "#slider-range-min" ).slider( "enable" );
   $ ( "#slider-range-max" ).slider( "enable" );
   $ ( "#radio1" ).button( "enable" );
@@ -89,9 +91,6 @@ function showPowerOn() {
   $ ( "#radio4" ).button( "enable" );
   $ ( "#radio5" ).button( "enable" );
   $ ( "#radio6" ).button( "enable" );
-//  $ ( "#radio7" ).button( "enable" );
-//  $ ( "#radio8" ).button( "enable" );
-//  $ ( "#radio9" ).button( "enable" ); 
 
 
 	oven.push("on");
@@ -114,19 +113,25 @@ checkOven();
 
 function selectShell() {
 
-  document.getElementById("status").innerHTML = "<p>You selected a " + $('input[name="radioS"]:checked').val() + " shell. Filling?"
+  document.getElementById("status").innerHTML = "<p>You selected a " + $('input[name="radioS"]:checked').val() + " shell. Select a filling."
   console.log("Pie shell selected");
+  document.getElementById("shell").style.backgroundColor = '#DEFFFA';
   }
 
 
 function selectFill() {
-	document.getElementById("status").innerHTML = "<p>You selected " + $('input[name="radioF"]:checked').val() + " filling. Set temp to 425.</p>";
+	document.getElementById("status").innerHTML = "<p>You selected " + $('input[name="radioF"]:checked').val() + " filling &#62; &#62; &#62;</p>";
 	console.log("Pie filling selected");
   $ ( "#radio7" ).button( "enable" );
   $ ( "#radio8" ).button( "enable" );
+  document.getElementById("filling").style.backgroundColor = "#DEFFFA";
+  setTimeout(change, 1500);
+    function change() {
+      document.getElementById("status").innerHTML = "<p>...select 425 degrees for a half-hour.</p>";
+      
+    }
+
 }
-
-
 
 
 function bakePie() {
@@ -135,7 +140,7 @@ function bakePie() {
       console.log("continue");
      
     } else {
-     // document.getElementById("status").innerHTML = "<p>Select a shell before continuing.</p>";
+      //document.getElementById("status").innerHTML = "<p>Select a shell before continuing.</p>";
       console.log("can't continue");
     }
 
@@ -156,7 +161,7 @@ function bakePie() {
     	console.log("bad time");
     }
     
-  	document.getElementById("status").innerHTML = "<p>This " + $('input[name="radioF"]:checked').val() + " pie is perfect!</p>"; 
+  	document.getElementById("status").innerHTML = "<p>Success! This " + $('input[name="radioF"]:checked').val() + " pie is perfect!</p>"; 
     
     if (temp * time < "12750") {
       document.getElementById("status").innerHTML = "<p>This " + $('input[name="radioF"]:checked').val() + " pie is underdone!</p>";
@@ -169,14 +174,27 @@ function bakePie() {
     } else if (temp * time == "12750") {
       console.log("Pie success!");
       $("#ovenopening").attr("src","ovenpie_good.png");
-      console.log("image change good")
+      console.log("image change good");
+      $("#exhaustpanel").attr("src", "exhaust_good.png");
     }
+
 }
 
 function resetPie () {
-  //$('input[name="radioS"]').removeAttr('checked');
-  //$('input[name="radioF"]').removeAttr('checked');
+  var resetOption = $(".opt");
+    resetOption.prop('checked', false).button("refresh"); 
+  document.getElementById("status").innerHTML = "<p>Start over. Select a shell.</p>";
+  $("#ovenopening").attr("src", "ovenpie_none.png");
+  $( "#radio7" ).button( "disable" );
+  $( "#radio8" ).button( "disable" );
+
+}
+
+function turnOff () {
   history.go(0);
 }
+
+
+
 
 
