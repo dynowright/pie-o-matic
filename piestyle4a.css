@@ -1,4 +1,15 @@
+@charset "UTF-8";
+/* CSS Document */
+
 /* piestyle4a.css */
+
+body {
+	margin-left: 0;
+}
+
+p {
+	margin: 0;
+}
 
 #main {
 	background-color: #A2e5e8;
@@ -8,8 +19,8 @@
 	height: 480px;
 	z-index: 0;
 	margin: 0 auto;
-	padding: 2% 0 2% 0;
-	border-radius: 2%;
+	padding: 1% 0 2% 0;
+	border-radius: 0.25em;
 }
 
 #top {
@@ -24,23 +35,24 @@
 
 #nameplate {
 	float: left;
-	font-family: 'Acme', serif;
+	font-family: 'Cherry Cream Soda', serif;
 	color: #FF904A;
-	font-size: 1.25em;
+	font-size: 1.5em;
 	text-align: left;
+	line-height: 100%;
 }
 
-#powerswitch {
-	max-width: 35%;
+#powerswitch, #powerswitchoff {
+	max-width: 40%;
 	background-color: gray;
 	margin: 0 auto;
-	padding: 2%;
+	padding: 1%;
 	text-align: center;
 	border: solid white 1px;
 	border-radius: 12%;
 	color: white;
-	font-family: "Michroma", sans-serif;
-	font-size: 0.5em;
+	font-family: 'Archivo Black', sans-serif;
+	font-size: 0.75em;
 	float: right;
 	cursor: pointer;
 }
@@ -53,15 +65,29 @@
 	padding: 1%;
 	margin: 0 auto;
 	margin-bottom: 2%;
-	color: #FF904A;
 	text-align: center;
-	font-size: x-small;
-	font-family: "Michroma", sans-serif;
+	font-size: small;
+	font-family: "Archivo Black", sans-serif;
+	color: #FF904A;
+	line-height: 100%;
+
+}
+
+#status p {
+	margin: 2%;
 }
 
 .statustext {
-	position: relative;
-	bottom: 25%;
+	/* position: relative;
+	bottom: 50%; */ 
+	color: #FF904A;
+	font-size: small;
+	font-family: "Archivo Black", sans-serif;
+	text-align: center;
+}
+
+.statustext p {
+	margin: 2%;
 }
 
 #options {
@@ -69,32 +95,38 @@
 	border: solid #FFD653;
 	border-width: 1%;
 	max-width: 90%;
-	height: 55%;
+	height: 56%;
 	padding: 1%;
 	margin: 0 auto;
 	margin-bottom: 2%;
 }
 
-#pie {}
-#shell {}
-#filling {}
+#pie {
+	margin-bottom: 2%;
+}
+#shell {
+	margin: 1% 1% 4% 1%;
+}
+#filling {
+	margin: 1% 1% 4% 1%;
+}
 
 #formshell {
 	margin: 0 auto;
 	text-align: center;
 	position: relative;
-	left: 85px;
+	left: 27%; 
 }
 
 #formfilling {
 	position: relative;
-	left: 10px;
+	left: 13%;
 }
 
 #formbake {
 	margin-top: 15px;
 	position: relative;
-	left: 80px;
+	left: 31%;
 }
 
 
@@ -115,14 +147,15 @@
 
 .selecttext {
 	text-align: center;
-	font-family: 'Michroma', sans-serif;
+	font-family: 'Cherry Cream Soda', sans-serif;
 	color: #FF904A;
-	font-size: 0.5em;
+	font-size: small;
+	margin-bottom: 3%;
 }
 
 #slider {
 	margin-top: 2%;
-	font-family: "Michroma", sans-serif;
+	font-family: "Acme", sans-serif;
 	color: #FF904A;
 }
 
@@ -133,11 +166,14 @@
 }
 
 .tempslider {
+	margin: 2% 0 4% 0;
 	border: 0;
 	color: #FF904A;
-	font-family: "Michroma", sans-serif;
-	font-size: xx-small;
+	font-family: 'Cherry Cream Soda', sans-serif;
+	font-size: small;
 }
+
+
 
 /* clearfix */
 
@@ -149,30 +185,27 @@
 
 /* media queries */
 
-@media (max-width: 320px) {
-	#left_shell_panel, #right_fill_panel {
+@media (max-width: 400px) {
+	#left_shell_panel {
 		display: none;
 	}
 }
-/* need to rewrite these next two media queries */
-@media (min-width: 340px) and (max-width: 767px) {
+
+@media (min-width: 400px) and (max-width: 767px) {
 	
 
 	#left_shell_panel {
-		background-color: #A2e5e8;
+		background-color: #A2e5e8; 
 		border: solid #2AB2AB;
-		border-width: 0.5%;
-		min-width: 100%;
-		max-width: 100%;
-		height: 479px;
+		border-width: 0.5%;		
+		width: 700px;
+		height: 480px;
 		z-index: -10;
-		padding: 2% 0 2% 0;
-		border-radius: 1%;
+		padding: 2% 0 1% 0;
+		border-radius: 0.25em;
 		position: absolute;
 	
-		
 	}
-
 
 }
 
@@ -183,16 +216,15 @@
 		background-color: #A2e5e8;
 		border: solid #2AB2AB;
 		border-width: 0.5%;
-		min-width: 100%;
-		max-width: 100%;
-		height: 479px;
+		width: 1000px;
+		height: 480px;
 		z-index: -10;
-		padding: 2% 0 2% 0;
-		border-radius: 1%;
+		padding: 2% 0 1% 0;
+		border-radius: 0.25em;
 		position: absolute;
+		left: 1%;
 	
-		
-	}
+		}
 }
 
 @media (min-width: 1024px) {
@@ -200,20 +232,14 @@
 	#left_shell_panel {
 		background-color: #A2e5e8;
 		border: solid #2AB2AB;
-		border-width: 0.5%;
-		min-width: 100%;
-		max-width: 100%;
-		height: 479px;
+		width: 1300px;
+		height: 480px;
 		z-index: -10;
-		padding: 2% 0 2% 0;
-		border-radius: 1%;
+		padding: 2% 0 1% 0;
+		border-radius: 0.25em;
 		position: absolute;
-	
+		left: 5%;
 		
 	}
-
-
-	
-
 
 } 
